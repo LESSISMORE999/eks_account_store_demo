@@ -1,0 +1,19 @@
+.header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.username {
+  margin-left: 30rpx;
+}
+
+.password {
+  margin-left: 30rpx;
+}
