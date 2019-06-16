@@ -8,5 +8,5 @@
   <view class="header password">
     <input class="input_password" value="{{ input_password_value }}" placeholder="Password" bindinput="inputPasswordChangeHandle" />
   </view>
-   <button class="weui-btn" type="primary" bindtap="saveHandle">Save</button>
+  <button class="weui-btn" type="primary" bindtap="saveHandle">Save</button>
 </view>

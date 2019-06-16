@@ -1,15 +1,19 @@
 Page({
   data: {
-    index_data_company_name_category_array: []
+    company_array: []
   },
-  onShow: function () {
-    var index_data_company_name_category_array = wx.getStorageSync('index_data_company_name_category_array')
-    console.log(index_data_company_name_category_array)
-    this.setData({ index_data_company_name_category_array: index_data_company_name_category_array })
+  onShow: function() {
+    var company_array = wx.getStorageSync('company_array')
+    console.log(company_array)
+    this.setData({
+      company_array: company_array
+    })
   },
-  onLoad: function () {
-    var index_data_company_name_category_array = wx.getStorageSync('index_data_company_name_category_array')
-    console.log(index_data_company_name_category_array)
-    this.setData({ index_data_company_name_category_array: index_data_company_name_category_array })
+  onLoad: function() {
+    var company_array = wx.getStorageSync('company_array')
+    console.log(company_array)
+    this.setData({
+      company_array: company_array
+    })
   }
 })

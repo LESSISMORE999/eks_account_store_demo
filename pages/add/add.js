@@ -1,48 +1,48 @@
 Page({
   data: {
-    input_company_name_value: '',
-    input_username_value: '',
-    input_password_value: '',
-    company_name_category_array: []
+    company_name: '',
+    username: '',
+    password: '',
+    company_array: []
   },
   save: function () {
-    wx.setStorageSync('index_data_company_name_category_array', this.data.company_name_category_array)
+    wx.setStorageSync('company_array', this.data.company_array)
   },
   inputCompanyNameChangeHandle: function (e) {
-    this.setData({ input_company_name_value: e.detail.value })
+    this.setData({ company_name: e.detail.value })
   },
   inputUsernameChangeHandle: function (e) {
-    this.setData({ input_username_value: e.detail.value })
+    this.setData({ username: e.detail.value })
   },
   inputPasswordChangeHandle: function (e) {
-    this.setData({ input_password_value: e.detail.value })
+    this.setData({ password: e.detail.value })
   },
   saveHandle: function () {
-    var company_name_category_array = this.data.company_name_category_array
-    var company_name_category_object = new Object()
-    if (company_name_category_array != null) {
-      company_name_category_object.id = company_name_category_array.length + 1
+    var company_array = this.data.company_array
+    var company_object = new Object()
+    if (company_array != null) {
+      company_object.id = company_array.length + 1
     } else {
-      company_name_category_object.id = + 1
+      company_object.id = + 1
     }
-    company_name_category_object.company_name = this.data.input_company_name_value
+    company_object.company_name = this.data.company_name
 
-    var username_category_array = new Array()
-    var username_category_object = new Object()
-    if (username_category_array != null) {
-      username_category_object.id = username_category_array.length + 1
+    var account_array = new Array()
+    var account_object = new Object()
+    if (account_array != null) {
+      account_object.id = account_array.length + 1
     } else {
-      username_category_object.id = 1
+      account_object.id = 1
     }
 
-    username_category_object.username = this.data.input_username_value
-    username_category_object.password = this.data.input_password_value
+    account_object.username = this.data.username
+    account_object.password = this.data.password
 
-    username_category_array.push(username_category_object)
-    company_name_category_object.username_category_array = username_category_array
-    company_name_category_array.push(company_name_category_object)
+    account_array.push(account_object)
+    company_object.account_array = account_array
+    company_array.push(company_object)
 
-    console.log(company_name_category_array)
+    console.log(company_array)
     this.save()
   }
 })

@@ -1,13 +1,17 @@
-<block wx:if="{{ index_data_company_name_category_array.length }}">
-  <view wx:for="{{ index_data_company_name_category_array }}"  wx:for-item="company_name_category_object" wx:key="{{ company_name_category_object.id }}">
-    <text class="name">{{ company_name_category_object.company_name }}</text>
-    <view wx:for="{{ company_name_category_object.username_category_array }}" wx:for-item="username_category_object" wx:key="{{ username_category_object.id }}">
-      <view>
-        <text class="name">{{ username_category_object.username }}</text>
-      </view>
-      <view>
-        <text class="name">{{ username_category_object.password }}</text>
+<view class="container">
+  <block wx:if="{{ company_array.length }}">
+    <view wx:for="{{ company_array }}" wx:for-item="company_object" wx:key="{{ company_object.id }}">
+      <input class="company_name" value="{{ company_object.company_name }}" />
+      <view wx:for="{{ company_object.account_array }}" wx:for-item="account_object" wx:key="{{ account_object.id }}">
+        <input class="account_object username" value="{{ account_object.username }}" />
+        <input class="account_object password" value="{{ account_object.password }}" />
       </view>
     </view>
-  </view>
-</block>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">记录为空</text>
+      <text class="content">快去添加记录吧</text>
+    </view>
+  </block>
+</view>
