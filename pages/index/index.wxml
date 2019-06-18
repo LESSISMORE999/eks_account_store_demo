@@ -1,10 +1,10 @@
 <view class="container">
   <block wx:if="{{ company_array.length }}">
-    <view wx:for="{{ company_array }}" wx:for-item="company_object" wx:key="{{ company_object.id }}">
-      <input class="company_name" value="{{ company_object.company_name }}" />
-      <view wx:for="{{ company_object.account_array }}" wx:for-item="account_object" wx:key="{{ account_object.id }}">
-        <input class="account_object username" value="{{ account_object.username }}" />
-        <input class="account_object password" value="{{ account_object.password }}" />
+    <view wx:for="{{ company_array }}" wx:for-item="company_object" wx:key="{{ company_object.id }}" disabled catchtap="controlShowHandle" data-company_object_id="{{company_object.id}}">
+      <input class="company_name" value="{{ company_object.company_name }}" disabled/>
+      <view wx:for="{{ company_object.account_array }}" wx:for-item="account_object" wx:key="{{ account_object.id }}" hidden="{{ account_object.hidden_boolean }}" data-company_object_id="{{company_object.id}}" data-account_object_id="{{account_object.id}}" catchtap="controlShowHandle">
+        <input class="account_object username" value="{{ account_object.username }}" disabled/>
+        <input class="account_object password" value="{{ account_object.password }}" disabled/>
       </view>
     </view>
   </block>

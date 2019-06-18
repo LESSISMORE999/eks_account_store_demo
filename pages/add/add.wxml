@@ -1,12 +1,12 @@
 <view class="container">
-  <view class="header company_name">
-    <input class="input_company_name" value="{{ input_company_name_value }}" placeholder="CompanyName" bindinput="inputCompanyNameChangeHandle" />
+  <view class="common view_company_name">
+    <input class="input_company_name" data-name="company_name" value="{{ company_name }}" placeholder="CompanyName" bindinput="inputValueHandle" />
   </view>
-  <view class="header username">
-    <input class="input_username" value="{{ input_username_value }}" placeholder="Username" bindinput="inputUsernameChangeHandle" />
+  <view class="common view_username">
+    <input class="input_username" data-name="username" value="{{ username }}" placeholder="Username" bindinput="inputValueHandle" />
   </view>
-  <view class="header password">
-    <input class="input_password" value="{{ input_password_value }}" placeholder="Password" bindinput="inputPasswordChangeHandle" />
+  <view class="common view_password">
+    <input class="input_password" data-name="password" value="{{ password }}" placeholder="Password" bindinput="inputValueHandle" />
   </view>
   <button class="weui-btn" type="primary" bindtap="saveHandle">Save</button>
 </view>

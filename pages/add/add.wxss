@@ -1,4 +1,4 @@
-.header {
+.common {
   flex: 1;
   display: flex;
   align-items: center;
@@ -10,10 +10,10 @@
   font-size: 28rpx;
 }
 
-.username {
+.view_username {
   margin-left: 30rpx;
 }
 
-.password {
+.view_password {
   margin-left: 30rpx;
 }
