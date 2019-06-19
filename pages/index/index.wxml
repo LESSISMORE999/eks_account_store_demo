@@ -1,10 +1,12 @@
 <view class="container">
   <block wx:if="{{ company_array.length }}">
-    <view wx:for="{{ company_array }}" wx:for-item="company_object" wx:key="{{ company_object.id }}" disabled catchtap="controlShowHandle" data-company_object_id="{{company_object.id}}">
+    <view wx:for="{{ company_array }}" wx:for-item="company_object" wx:key="{{ company_object.id }}" disabled catchtap="controlCompanyObjectShowHandle" data-company_object_id="{{company_object.id}}">
       <input class="company_name" value="{{ company_object.company_name }}" disabled/>
-      <view wx:for="{{ company_object.account_array }}" wx:for-item="account_object" wx:key="{{ account_object.id }}" hidden="{{ account_object.hidden_boolean }}" data-company_object_id="{{company_object.id}}" data-account_object_id="{{account_object.id}}" catchtap="controlShowHandle">
-        <input class="account_object username" value="{{ account_object.username }}" disabled/>
-        <input class="account_object password" value="{{ account_object.password }}" disabled/>
+      <view hidden="{{ company_object.hidden_boolean }}">
+        <view wx:for="{{ company_object.account_array }}" wx:for-item="account_object" wx:key="{{ account_object.id }}" hidden="{{ account_object.hidden_boolean }}" data-company_object_id="{{company_object.id}}" data-account_object_id="{{account_object.id}}" catchtap="controlAccountObjectShowHandle">
+          <input class="account_object username {{ account_object.id%2 == 0 ? 'account_object_id_even':'account_object_id_uneven' }}" value="{{ account_object.username }}" disabled/>
+          <input class="account_object password {{ account_object.id%2 == 0 ? 'account_object_id_even':'account_object_id_uneven' }}" value="{{ account_object.password }}" disabled/>
+        </view>
       </view>
     </view>
   </block>

@@ -13,7 +13,12 @@
   box-shadow: 0 0 5rpx #e0e0e0;
   padding: 10rpx;
   font-size: 28rpx;
+}
+.account_object_id_even{
   background-color: #adfd95;
+}
+.account_object_id_uneven{
+  background-color: #3a82e3;
 }
 
 /* 
